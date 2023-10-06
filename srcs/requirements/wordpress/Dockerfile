@@ -15,6 +15,7 @@ RUN		chown -R root:root /var/www/wordpress
 
 COPY	conf/index.html conf/index.html
 
+COPY	conf/setup.sh conf/setup.sh
 ENTRYPOINT ["/bin/bash", "conf/setup.sh"]
 
 EXPOSE 9000
