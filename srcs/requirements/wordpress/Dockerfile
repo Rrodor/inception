@@ -16,6 +16,11 @@ RUN		chown -R root:root /var/www/wordpress
 COPY	conf/index.html conf/index.html
 
 COPY	conf/setup.sh conf/setup.sh
+
+RUN		wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN		chmod 755 wp-cli.phar
+RUN		mv wp-cli.phar /usr/local/bin/wp
+
 ENTRYPOINT ["/bin/bash", "conf/setup.sh"]
 
 EXPOSE 9000
