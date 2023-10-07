@@ -1,0 +1,26 @@
+`
+    clear
+    echo "Please enter your env variables: "
+    sleep 0.15
+    echo -n "SITE_ADMIN_PASSWORD="; read site_admin_password; echo "SITE_ADMIN_PASSWORD=$site_admin_password" >> $1
+    clear
+    echo "Please enter your env variables: "
+    sleep 0.15
+    echo -n "SITE_ADMIN_EMAIL="; read site_admin_email; echo "SITE_ADMIN_EMAIL=$site_admin_email" >> $1
+    clear
+    echo "Please enter your env variables: "
+    sleep 0.15
+    echo -n "SITE_USER1_LOGIN="; read site_user1_login; echo "SITE_USER1_LOGIN=$site_user1_login" >> $1
+    clear
+    echo "Please enter your env variables: "
+    sleep 0.15
+    echo -n "SITE_USER1_PASSWORD="; read site_user1_password; echo "SITE_USER1_PASSWORD=$site_user1_password" >> $1
+    clear
+    echo "Please enter your env variables: "
+    sleep 0.15
+    echo -n "SITE_USER1_EMAIL="; read site_user1_email; echo "SITE_USER1_EMAIL=$site_user1_email" >> $1
+    clear
+    sleep 0.15
+fi
+echo "Everything is set up, thank you for using Inception by BaBreton, please press enter to continue..."; read
+exit 0
