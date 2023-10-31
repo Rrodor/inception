@@ -8,6 +8,8 @@ LOGIN = rrodor
 all: build run
 
 build:
+	mkdir -p ~/data/wordpress
+	mkdir -p ~/data/mysql
 	sudo docker-compose -f $(COMPOSE_FILE) build
 	@echo "\n\nInception is ready to be launched."
 
@@ -25,5 +27,6 @@ fclean: clean
 	@if [ -n "$$(sudo docker ps -a -q)" ]; then sudo docker rm -f $$(sudo docker ps -a -q); fi
 	@if [ -n "$$(sudo docker images -q)" ]; then sudo docker rmi -f $$(sudo docker images -q); fi
 	@if [ -n "$$(sudo docker volume ls -q)" ]; then sudo docker volume prune -f; fi
+	rm -rf ~/data/*
 
 re: fclean all
